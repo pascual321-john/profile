@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* This ensures the image container is hidden until you click the button */
+        .image-container {
+            display: none;
+            margin-top: 15px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="font">
+        <p>Teacher Appreciation</p>
+        <div class="smile">
+            <span class="gift-emojis">🎁🎁</span>
+            <h1>TEACHER WE LOVE</h1>
+            <button class="btn" onclick="showMessage()">>click<</button> 
+            <p id="welcome-message"></p>
+            
+            <div id="teacherImage" class="image-container">
+                <img src="665798314_3716904698447499_5060093365214513032_n.jpg" alt="Our Teacher">
+            </div>
+        </div>
+    </div>
+    
+    <!-- URL encoded spaces to allow browser layout engines to find the track reliably -->
+    <audio id="myMusic" src="Gravity%20Falls%20opening%20theme%20FULL.mp3"></audio>
+
+    <script> 
+        function showMessage() { 
+            // 1. Reveal your appreciation text
+            document.getElementById("welcome-message").innerHTML = "Thank you for being an amazing teacher!"; 
+
+            // 2. Animate and reveal your photo container matching the CSS styles
+            var imgContainer = document.getElementById("teacherImage");
+            imgContainer.classList.add("show");
+
+            // 3. Fire the music track playback
+            var audio = document.getElementById("myMusic");
+            audio.play().catch(function(error) {
+                console.log("Audio playback failed:", error);
+            });
+        } 
+    </script> 
+</body>
+</html>
